@@ -68,6 +68,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       // 消除打包大小超过500kb警告
       chunkSizeWarningLimit: 4000
     },
+    
     define: {
       __INTLIFY_PROD_DEVTOOLS__: false,
       __APP_INFO__: JSON.stringify(__APP_INFO__)
