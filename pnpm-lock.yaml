@@ -6,6 +6,7 @@ specifiers:
   '@types/qs': ^6.9.7
   '@vitejs/plugin-vue': ^3.0.3
   '@vue/compiler-sfc': ^3.2.37
+  '@vue/test-utils': ^2.0.2
   axios: ^0.27.2
   dayjs: ^1.11.5
   element-plus: ^2.2.13
@@ -27,6 +28,7 @@ specifiers:
   vue-types: ^4.2.1
 
 dependencies:
+  '@vue/test-utils': 2.0.2_vue@3.2.37
   axios: 0.27.2
   dayjs: 1.11.5
   element-plus: 2.2.13_vue@3.2.37
@@ -634,7 +636,6 @@ packages:
       vue: ^3.0.1
     dependencies:
       vue: 3.2.37
-    dev: true
 
   /@vueuse/core/8.9.4_vue@3.2.37:
     resolution: {integrity: sha512-B/Mdj9TK1peFyWaPof+Zf/mP9XuGAngaJZBwPaXBvU3aCTZlx3ltlrFFFyMV4iGBwsjSCeUCgZrtkEj9dS2Y3Q==}
