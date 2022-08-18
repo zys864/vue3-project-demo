@@ -6,7 +6,9 @@ import "element-plus/dist/index.css";
 import ElementPlus from "element-plus";
 import App from "./App.vue";
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import { worker } from './mocks/browser';
 
+worker.start()
 
 const app = createApp(App);
 

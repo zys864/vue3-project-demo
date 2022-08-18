@@ -41,5 +41,8 @@
     "vite-plugin-remove-console": "^1.1.0",
     "vitest": "^0.22.0",
     "vue-tsc": "^0.39.5"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
