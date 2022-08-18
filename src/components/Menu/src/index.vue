@@ -7,8 +7,9 @@
         <el-sub-menu index="1">
             <template #title>
                 <el-icon>
-                    <message />
-                </el-icon>基本信息
+                    <MessageBox />
+                </el-icon>
+                基本信息
             </template>
             <el-menu-item-group>
                 <el-menu-item index="1-1">我的权限</el-menu-item>

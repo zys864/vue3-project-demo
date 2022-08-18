@@ -4,7 +4,7 @@ const emits = defineEmits(['openDrawer'])
 const openDrawer = () => {
     emits('openDrawer', {
         title: "添加用户信息",
-        isView: true,
+        isView: false,
     })
 }
 </script>

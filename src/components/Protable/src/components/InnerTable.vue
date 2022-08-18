@@ -14,7 +14,11 @@
                 </template>
                 <template #default="scope">
                     <el-button size="small" @click="handleEdit(scope.$index, scope.row)">延期</el-button>
-                    <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除
+                    <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">
+                        <el-icon>
+                            <Delete style="margin-right: 2px;"/>
+                        </el-icon>
+                        删除
                     </el-button>
                 </template>
             </el-table-column>

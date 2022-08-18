@@ -16,7 +16,8 @@ interface DrawerExpose {
 }
 const drawerRef = ref<DrawerExpose>();
 const openDrawer=(v: any)=>{
-  drawerRef.value!.acceptParams(v)
+  console.log(v);
+  drawerRef.value!.acceptParams(v);
 }
 </script>
 
