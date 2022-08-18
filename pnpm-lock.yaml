@@ -20,6 +20,7 @@ specifiers:
   unocss: ^0.45.7
   unplugin-auto-import: ^0.11.1
   unplugin-vue-components: ^0.22.4
+  uuid: ^8.3.2
   vite: ^3.0.7
   vite-plugin-mock: ^2.9.6
   vite-plugin-remove-console: ^1.1.0
@@ -40,6 +41,7 @@ dependencies:
   qs: 6.11.0
   rollup: 2.78.0
   unocss: 0.45.7_vite@3.0.8
+  uuid: registry.npmjs.org/uuid/8.3.2
   vue: 3.2.37
   vue-router: 4.1.3_vue@3.2.37
   vue-types: 4.2.1_vue@3.2.37
@@ -3651,6 +3653,13 @@ packages:
       is-typed-array: registry.npmjs.org/is-typed-array/1.1.9
       safe-buffer: registry.npmjs.org/safe-buffer/5.1.2
       which-typed-array: registry.npmjs.org/which-typed-array/1.1.8
+    dev: false
+
+  registry.npmjs.org/uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==, registry: https://mirrors.sjtug.sjtu.edu.cn/npm-registry, tarball: https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz}
+    name: uuid
+    version: 8.3.2
+    hasBin: true
     dev: false
 
   registry.npmjs.org/wcwidth/1.0.1:

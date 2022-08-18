@@ -2,8 +2,8 @@
 
 
 export type UserInfo = {
-  id: number;
-  date: Date;
+  uuid: String;
+  date: String;
   name: String;
   province?: String;
   city?: String;

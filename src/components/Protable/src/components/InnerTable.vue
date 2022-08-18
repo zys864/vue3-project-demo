@@ -16,7 +16,7 @@
                     <el-button size="small" @click="handleEdit(scope.$index, scope.row)">延期</el-button>
                     <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">
                         <el-icon>
-                            <Delete style="margin-right: 2px;"/>
+                            <Delete style="margin-right: 2px;" />
                         </el-icon>
                         删除
                     </el-button>
@@ -31,25 +31,24 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-import { UserInfo } from '/@/api/types'
+import { onMounted, ref } from 'vue';
+import { deleteUserInfo, getUserInfo } from '/@/api/modules/user';
+import { UserInfo } from '/@/api/types';
+import { User } from '/@/api/modules/user';
 
-let tableDataInner: Array<UserInfo> = []
-for (var i = 1; i <= 200; i++) {
-    tableDataInner.push({
-        id: i,
-        date: new Date(),
-        name: "王晓虎" + i.toString(),
-        province: "江苏",
-        city: "南京",
-        address: "雨花区",
-    })
-}
+
+let tableDataInner: UserInfo[] = []
+getUserInfo().then(
+    (data) => tableDataInner = data
+)
 const search = ref('')
+
+// pagination
 let current_page = ref(1)
 let page_size = ref(10)
 let table_len = ref(tableDataInner.length)
 let tableDataView = ref(tableDataInner.slice(0, page_size.value))
+
 const handle_current_pagination_change = () => {
     const start_index = (current_page.value - 1) * page_size.value
     const end_index = start_index + page_size.value
@@ -63,16 +62,20 @@ const filterTableDataHandler = () =>
             data.name.toLowerCase().includes(search.value.toLowerCase())
     )
 
-
+// 编辑删除
 const handleEdit = (index: number, row: UserInfo) => {
     console.log(index, row)
 }
 const handleDelete = (index: number, row: UserInfo) => {
-    console.log(row.id)
-    const deleted_user = tableDataView.value.splice(index, 1)
-    tableDataInner.filter(user => user.id !== row.id)
-    table_len.value = tableDataInner.length
-    console.log('deleted_user', deleted_user)
+    deleteUserInfo({ ids: [row.uuid] }).then((deletedUser) => {
+        User.deleteUserMethod(tableDataInner, deletedUser)
+        const deleted_user = tableDataView.value.splice(index, 1)
+        console.log(deleted_user);
+        
+        table_len.value = tableDataInner.length
+    })
+
+
 }
 
 </script>

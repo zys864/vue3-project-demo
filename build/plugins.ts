@@ -18,9 +18,12 @@ export function getPluginsList(command) {
       localEnabled: command === "serve",
       prodEnabled: command !== "serve" && prodMock,
       injectCode: `
-          import { setupProdMockServer } from './mockProdServer';
-          setupProdMockServer();
-        `,
+      import { server } from './mocks/servers'
+
+      beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
+      afterAll(() => server.close())
+      afterEach(() => server.resetHandlers())
+      `,
       logger: false
     }),
   ];
